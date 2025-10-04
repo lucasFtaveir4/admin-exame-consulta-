@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Cadastro de Resultados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Área Administrativa</h1>
+        <h2>Cadastro/Atualização de Resultados</h2>
+
+        <form id="formAdmin">
+            <label for="cpfAdmin">CPF (somente números - 11 dígitos):</label>
+            <input type="text" id="cpfAdmin" placeholder="11122233344" maxlength="11" required>
+
+            <label for="resultadoAdmin">Resultado:</label>
+            <textarea id="resultadoAdmin" rows="3" placeholder="Digite o resultado completo. Ex: NEGATIVO, POSITIVO." required></textarea>
+
+            <button type="submit">Salvar/Atualizar Resultado</button>
+        </form>
+
+        <div id="mensagemAdmin"></div>
+        
+        <p style="margin-top: 20px;"><a href="index.html">Voltar para a Consulta</a></p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Adiciona o listener de envio do formulário
+        document.getElementById('formAdmin').addEventListener('submit', function(e) {
+            e.preventDefault();
+            salvarResultado(); // Chama a função que usa a API do Google Sheets
+        });
+    </script>
+</body>
+</html>
